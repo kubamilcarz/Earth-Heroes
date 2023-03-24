@@ -32,7 +32,7 @@ struct HeroButton: View {
         } label: {
             ZStack {
                 if style == .primary {
-                    LinearGradient(colors: [.accentColor.opacity(0.9), .mint.opacity(0.9), .accentColor.opacity(0.9)], startPoint: .bottomLeading, endPoint: .topTrailing)
+                    LinearGradient(colors: [.accentColor.opacity(0.9), .teal, .accentColor.opacity(0.9)], startPoint: .bottomLeading, endPoint: .topTrailing)
                 }
                 
                 if style == .secondary {

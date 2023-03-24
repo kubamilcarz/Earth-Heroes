@@ -11,7 +11,6 @@ struct CustomTabBarView: View {
     let tabs: [TabBarItem]
     @Binding var selection: TabBarItem
     
-    @Namespace private var tabBarNamespace
     @State private var localSelection: TabBarItem
     
     init(tabs: [TabBarItem], selection: Binding<TabBarItem>) {
@@ -32,57 +31,35 @@ struct CustomTabBarView: View {
 
 extension CustomTabBarView {
     
-    private func tabView(tab: TabBarItem) -> some View {
-        VStack(spacing: 3) {
-            Image(systemName: tab.iconName)
-                .font(.subheadline)
-            Text(tab.title)
-                .font(.system(size: 10, weight: .semibold, design: .serif))
-        }
-        .foregroundColor(localSelection == tab ? tab.color : .gray)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity)
-        .background(tab.color.opacity(localSelection == tab ? 0.2 : 0.001))
-        .cornerRadius(12)
-    }
-    
-    private var tabBarVersion1: some View {
-        HStack {
-            ForEach(tabs, id: \.self) { tab in
-                tabView(tab: tab)
-                    .onTapGesture {
-                        switchToTab(tab: tab)
-                    }
-            }
-        }
-        .padding(6)
-        .background(Color.white.ignoresSafeArea(edges: .bottom))
-    }
-    
     private func switchToTab(tab: TabBarItem) {
         selection = tab
     }
-}
-
-extension CustomTabBarView {
     
     private func tabView2(tab: TabBarItem) -> some View {
-        VStack(spacing: 5) {
+        HStack(spacing: 10) {
             Image(systemName: tab.iconName)
                 .font(.subheadline)
+                .imageScale(.medium)
             Text(tab.title)
-                .font(.custom("LondrinaSolid-Light", size: 13))
+                .font(.custom("LondrinaSolid-Light", size: 14))
         }
         .foregroundColor(localSelection == tab ? tab.color : .gray)
-        .padding(.vertical, 8)
+        .padding(.vertical, 15)
         .frame(maxWidth: .infinity)
         .background(
             ZStack {
                 if localSelection == tab {
                     RoundedRectangle(cornerRadius: 16)
+                        .fill(.background)
+                        .shadow(color: .black.opacity(0.3), radius: 0, y: 3)
+                    
+                    RoundedRectangle(cornerRadius: 16)
                         .fill(tab.color.opacity(0.2))
-                        .matchedGeometryEffect(id: "background_rectangle", in: tabBarNamespace)
                 } else {
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.accentColor.opacity(0.001))
+                        .shadow(color: .black.opacity(0.001), radius: 0, y: 3)
+                    
                     Color.accentColor.opacity(0.001)
                 }
             }
