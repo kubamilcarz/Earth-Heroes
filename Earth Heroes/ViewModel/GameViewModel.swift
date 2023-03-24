@@ -12,14 +12,23 @@ class GameViewModel: ObservableObject {
     @Published var questions: [Question] = []
     
     @Published var isShowingGameSettings = false
+    @Published var isShowingGameSummary = false
     
     @Published var chosenAnswer = ""
-    @Published var correctAnswer = "Zanieczyszczenie wody"
-    @Published var funFact: String? = "Zmiany klimatyczne to efekt działalności człowieka uwalniającego gazy cieplarniane do atmosfery."
+    @Published var currentQuestion: Question?
+
     @Published var isCorrect: Bool?
+    @Published var roundNumber = 1
+    @Published var badCount = 0
+    @Published var correctCount = 0
     
     init() {
-        self.questions = loadQuestions()
+        let shuffledQuestions = loadQuestions().shuffled()
+        questions = shuffledQuestions
+        if !shuffledQuestions.isEmpty {
+            currentQuestion = shuffledQuestions[0]
+        }
+        
     }
     
     private func loadQuestions() -> [Question] {
@@ -31,7 +40,7 @@ class GameViewModel: ObservableObject {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            return try decoder.decode([Question].self, from: data).shuffled()
+            return try decoder.decode([Question].self, from: data)
         } catch {
             print("Error decoding JSON: \(error)")
         }
@@ -41,9 +50,24 @@ class GameViewModel: ObservableObject {
     }
     
     func checkAnswer() {
-        guard !chosenAnswer.isEmpty else { return }
+        guard let currentQuestion, !chosenAnswer.isEmpty else { return }
         
-        self.isCorrect = chosenAnswer == correctAnswer
+        self.isCorrect = chosenAnswer == getCorrectAnswer()
+    }
+    
+    func getCorrectAnswer() -> String {
+        guard let currentQuestion else { return "" }
+        
+        switch currentQuestion.correctAnswer {
+        case .a:
+            return currentQuestion.answerA
+        case .b:
+            return currentQuestion.answerB
+        case .c:
+            return currentQuestion.answerC
+        case .d:
+            return currentQuestion.answerD
+        }
     }
     
     func resetVariables() {
@@ -53,6 +77,34 @@ class GameViewModel: ObservableObject {
     
     func getNextQuestion() {
         resetVariables()
+        
+        // if current question exist and if index exists
+        if let lastQuestion = currentQuestion,
+           let index = questions.firstIndex(where: { $0 == lastQuestion }) {
+            
+            // check answers and add points accordingly
+            withAnimation {
+                roundNumber += 1
+                if chosenAnswer == lastQuestion.correctAnswerText {
+                    // correct
+                    correctCount += 1
+                } else {
+                    // false
+                    badCount += 1
+                }
+            }
+            
+            // if it's the last question
+            if index >= questions.count-1 {
+                withAnimation {
+                    isShowingGameSummary = true
+                }
+            } else {
+                withAnimation {
+                    currentQuestion = questions[index+1]
+                }
+            }
+        }
     }
     
 }

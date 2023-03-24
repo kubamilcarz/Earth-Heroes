@@ -7,17 +7,34 @@
 
 import SwiftUI
 
-struct Question: Identifiable, Codable {
+struct Question: Identifiable, Codable, Equatable {
     var id: Int
     var question: String
     var answerA: String
     var answerB: String
     var answerC: String
     var answerD: String
-    var correctAnswer: String
+    var correctAnswer: CorrectAnswer
     var category: QuestionCategory
     var funFact: String
     var difficulty: QuestionDifficulty
+    
+    var correctAnswerText: String {
+        switch correctAnswer {
+        case .a:
+            return answerA
+        case .b:
+            return answerB
+        case .c:
+            return answerC
+        case .d:
+            return answerD
+        }
+    }
+}
+
+enum CorrectAnswer: String, Codable {
+    case a = "A", b = "B", c = "C", d = "D"
 }
 
 enum QuestionDifficulty: String, Codable {
@@ -63,9 +80,19 @@ enum QuestionCategory: String, Codable {
         switch self {
         case .electricity: return .yellow
         case .pollution: return .brown
-        case .foodWaste: return .blue
+        case .foodWaste: return .orange
         case .recycling: return .green
         case .greenhouseGases: return .red
+        }
+    }
+    
+    var background: String {
+        switch self {
+        case .electricity: return "energy"
+        case .pollution: return "pollution"
+        case .foodWaste: return "foodWaste"
+        case .recycling: return "recycling"
+        case .greenhouseGases: return "greenhouse"
         }
     }
 }

@@ -12,11 +12,11 @@ struct AnswerBox: View {
     @State private var isTapped = false
     
     var title: String
-    var icon: String
+    var questionType: CorrectAnswer
     
-    init(_ title: String, icon: String) {
+    init(_ title: String, question: CorrectAnswer) {
         self.title = title
-        self.icon = icon
+        self.questionType = question
     }
     
     var body: some View {
@@ -28,7 +28,7 @@ struct AnswerBox: View {
             }
             
             if let isCorrect = gameVM.isCorrect {
-                if gameVM.correctAnswer == title {
+                if gameVM.getCorrectAnswer() == title {
                     LinearGradient(colors: [Color.green.opacity(0.4), Color.green.opacity(0.8)], startPoint: .bottomLeading, endPoint: .topTrailing)
                 }
                 
@@ -38,15 +38,16 @@ struct AnswerBox: View {
             }
             
             HStack(spacing: 15) {
-                Image(systemName: icon)
+                Image(systemName: "\(questionType.rawValue.lowercased()).square")
                     .font(.title2.bold())
                     .foregroundStyle(gameVM.chosenAnswer == title ? .primary : .secondary)
                 
                 Text(title)
                     .font(.custom(HeroFont.light.rawValue, size: 18))
-                
-                Spacer()
+                    .lineLimit(4)
+                    .layoutPriority(1)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))

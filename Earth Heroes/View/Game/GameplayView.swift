@@ -33,6 +33,11 @@ struct GameplayView: View {
             if gameVM.isShowingGameSettings {
                 ZStack {
                     Rectangle().fill(.ultraThinMaterial.opacity(0.7))
+                        .onTapGesture {
+                            withAnimation {
+                                gameVM.isShowingGameSettings = false
+                            }
+                        }
                     
                     VStack {
                         PageBar("Settings") {
@@ -61,15 +66,19 @@ struct GameplayView: View {
                 .transition(.scale)
             }
             
-            if isShowingFunFactSheet && gameVM.funFact != nil {
+            if isShowingFunFactSheet && !(gameVM.currentQuestion?.funFact ?? "").isEmpty {
                 ZStack {
                     Rectangle().fill(.ultraThinMaterial.opacity(0.7))
-                    
+                        .onTapGesture {
+                            withAnimation {
+                                isShowingFunFactSheet = false
+                            }
+                        }
                     VStack {
                         PageBar("Fun Fact", isFunFact: true) {
                             isShowingFunFactSheet = false
                         }
-                        if let funfact = gameVM.funFact {
+                        if let funfact = gameVM.currentQuestion?.funFact {
                             Text(funfact)
                                 .multilineTextAlignment(.center)
                                 .padding(.vertical, 30)
@@ -92,18 +101,15 @@ struct GameplayView: View {
         HStack(spacing: 15) {
             Rectangle().fill(.clear).frame(width: 30, height: 30)
             
-            VStack(spacing: 7) {
-                Text("Quiz")
-                    .font(.custom(HeroFont.light.rawValue, size: 18))
-                
+            GeometryReader { geo in
                 ZStack(alignment: .leading) {
                     Capsule().fill(.ultraThinMaterial)
-                        .frame(height: 5)
+                        .frame(height: 7)
                     Capsule().fill(LinearGradient(colors: [.accentColor, .mint], startPoint: .bottomLeading, endPoint: .topTrailing))
-                        .frame(width: 110, height: 5)
+                        .frame(width: geo.size.width * CGFloat(gameVM.roundNumber)/CGFloat(gameVM.questions.count), height: 7)
                 }
-                
             }
+            .frame(height: 7)
             
             Button { withAnimation { gameVM.isShowingGameSettings = true } } label: {
                 Image(systemName: "pause.fill")
@@ -118,46 +124,55 @@ struct GameplayView: View {
         
         VStack(spacing: 30) {
             ZStack(alignment: .bottom) {
-                Image("climate")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                    .clipped()
+                if let question = gameVM.currentQuestion {
+                    Image(question.category.background)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        .clipped()
+                }
                 
                 ScrollView {
                     VStack(spacing: 30) {
                         QuestionBox
                             .padding(.top, 75)
                         
-                        VStack(spacing: 20) {
-                            AnswerBox("Zanieczyszczenie powietrza", icon: "a.square")
-                            AnswerBox("Zanieczyszczenie wody", icon: "b.square")
-                            AnswerBox("Zanieczyszczenie hałasem", icon: "c.square")
-                            AnswerBox("Zanieczyszczenie światłem", icon: "d.square")
+                        if let question = gameVM.currentQuestion {
+                            VStack(spacing: 20) {
+                                AnswerBox(question.answerA, question: .a)
+                                AnswerBox(question.answerB, question: .b)
+                                AnswerBox(question.answerC, question: .c)
+                                AnswerBox(question.answerD, question: .d)
+                            }
+                            .padding(.bottom, 100)
                         }
-                        .padding(.bottom, 100)
                     }
                     .frame(maxWidth: 550)
                 }
                
                 HeroButton(gameVM.isCorrect != nil ? "Next Question" : "Check Answer") {
-                    if gameVM.isCorrect == nil {
-                        withAnimation {
-                            gameVM.checkAnswer()
-                        }
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    if let question = gameVM.currentQuestion {
+                        if gameVM.isCorrect == nil {
                             withAnimation {
-                                if gameVM.funFact != nil {
-                                    isShowingFunFactSheet = true
+                                gameVM.checkAnswer()
+                            }
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                withAnimation {
+                                    if !question.funFact.isEmpty {
+                                        isShowingFunFactSheet = true
+                                    }
                                 }
                             }
+                            
+                        } else {
+                            if isShowingFunFactSheet == false {
+                                gameVM.getNextQuestion()
+                            }
                         }
-                        
-                    } else {
-                        gameVM.getNextQuestion()
                     }
                 }
+                .disabled(gameVM.chosenAnswer.isEmpty)
                 .padding([.horizontal, .bottom])
                 .frame(maxWidth: 550)
             }
@@ -166,13 +181,15 @@ struct GameplayView: View {
     
     private var QuestionBox: some View {
         VStack(spacing: 20) {
-            Image(systemName: "wind")
-                .font(.title.bold())
-                .foregroundColor(.accentColor)
-            
-            Text("Jakie zanieczyszczenia spowodowane sa nadmiernym stosowaniem nawozów i pestycydów w rolnictwie?")
-                .font(.custom(HeroFont.regular.rawValue, size: 19))
-                .multilineTextAlignment(.center)
+            if let question = gameVM.currentQuestion {
+                Image(systemName: question.category.icon)
+                    .font(.title.bold())
+                    .foregroundColor(question.category.color)
+                
+                Text(question.question)
+                    .font(.custom(HeroFont.light.rawValue, size: 19))
+                    .multilineTextAlignment(.center)
+            }
         }
         .padding(20)
         .frame(maxWidth: 550)
