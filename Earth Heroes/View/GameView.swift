@@ -54,7 +54,8 @@ struct GameView: View {
                     
                     Spacer()
                 }
-                .frame(width: 240)
+                .frame(maxWidth: 350)
+                .padding(.horizontal, 50)
             }
             
             if let page = appVM.currentPage {
@@ -79,6 +80,7 @@ struct GameView: View {
                             .frame(width: geo.size.width - 50)
                             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
                             .shadow(color: .black.opacity(0.1), radius: 50)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                             
                             Spacer()
                         }

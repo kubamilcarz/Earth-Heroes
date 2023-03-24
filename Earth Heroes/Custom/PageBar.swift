@@ -10,9 +10,22 @@ import SwiftUI
 struct PageBar: View {
     @EnvironmentObject var appVM: AppViewModel
     var title: LocalizedStringKey
+    var action: () -> Void
+    var hasCustomAction: Bool
+    var isFunFact: Bool
     
-    init(_ title: LocalizedStringKey) {
+    init(_ title: LocalizedStringKey, isFunFact: Bool = false, action: @escaping () -> Void) {
         self.title = title
+        self.action = action
+        self.hasCustomAction = true
+        self.isFunFact = isFunFact
+    }
+    
+    init(_ title: LocalizedStringKey, isFunFact: Bool = false) {
+        self.title = title
+        self.action = { }
+        self.hasCustomAction = false
+        self.isFunFact = isFunFact
     }
     
     var body: some View {
@@ -27,10 +40,20 @@ struct PageBar: View {
             }
             
             HStack {
+                if isFunFact {
+                    Image(systemName: "sparkles")
+                        .foregroundColor(.yellow)
+                        .font(.title3)
+                }
+                
                 Spacer()
                 
                 Button {
-                    appVM.changePage(to: nil)
+                    if hasCustomAction {
+                        action()
+                    } else {
+                        appVM.changePage(to: nil)
+                    }
                 } label: {
                     Image(systemName: "xmark")
                         .font(.subheadline)
