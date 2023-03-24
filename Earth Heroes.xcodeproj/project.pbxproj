@@ -11,6 +11,27 @@
 		C87BBD6B29CC89730008C18E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD6A29CC89730008C18E /* ContentView.swift */; };
 		C87BBD6D29CC89740008C18E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD6C29CC89740008C18E /* Assets.xcassets */; };
 		C87BBD7029CC89740008C18E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD6F29CC89740008C18E /* Preview Assets.xcassets */; };
+		C87BBD8229CDDDE10008C18E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8129CDDDE10008C18E /* GameView.swift */; };
+		C87BBD8429CDDDE90008C18E /* FunfactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8329CDDDE90008C18E /* FunfactsView.swift */; };
+		C87BBD8729CDE3E10008C18E /* HeroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8629CDE3E10008C18E /* HeroButton.swift */; };
+		C87BBD8A29CDEA8C0008C18E /* GameplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8929CDEA8C0008C18E /* GameplayView.swift */; };
+		C87BBD8C29CDEA9A0008C18E /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8B29CDEA9A0008C18E /* ScoreboardView.swift */; };
+		C87BBD8E29CDEAA50008C18E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8D29CDEAA50008C18E /* AchievementsView.swift */; };
+		C87BBD9029CDEAAD0008C18E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD8F29CDEAAD0008C18E /* SettingsView.swift */; };
+		C87BBD9229CDEB560008C18E /* HeroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD9129CDEB560008C18E /* HeroPage.swift */; };
+		C87BBD9429CDEB790008C18E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD9329CDEB790008C18E /* AppViewModel.swift */; };
+		C87BBD9629CDF02D0008C18E /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBD9529CDF02D0008C18E /* PageBar.swift */; };
+		C87BBD9D29CDF34D0008C18E /* LondrinaSolid-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD9829CDF34D0008C18E /* LondrinaSolid-Black.ttf */; };
+		C87BBD9E29CDF34D0008C18E /* LondrinaSolid-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD9929CDF34D0008C18E /* LondrinaSolid-Thin.ttf */; };
+		C87BBD9F29CDF34D0008C18E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD9A29CDF34D0008C18E /* OFL.txt */; };
+		C87BBDA029CDF34D0008C18E /* LondrinaSolid-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD9B29CDF34D0008C18E /* LondrinaSolid-Light.ttf */; };
+		C87BBDA129CDF34D0008C18E /* LondrinaSolid-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C87BBD9C29CDF34D0008C18E /* LondrinaSolid-Regular.ttf */; };
+		C87BBDA429CDF3B60008C18E /* HeroTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDA329CDF3B60008C18E /* HeroTitle.swift */; };
+		C87BBDAA29CDF53D0008C18E /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDA629CDF53D0008C18E /* CustomTabBarView.swift */; };
+		C87BBDAB29CDF53D0008C18E /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDA729CDF53D0008C18E /* TabBarItemsPreferenceKey.swift */; };
+		C87BBDAC29CDF53D0008C18E /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDA829CDF53D0008C18E /* TabBarItem.swift */; };
+		C87BBDAD29CDF53D0008C18E /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDA929CDF53D0008C18E /* CustomTabBarContainerView.swift */; };
+		C87BBDAF29CDF5C80008C18E /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDAE29CDF5C80008C18E /* UIDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +40,29 @@
 		C87BBD6A29CC89730008C18E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C87BBD6C29CC89740008C18E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C87BBD6F29CC89740008C18E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C87BBD7629CC8A370008C18E /* Earth Heroes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Earth Heroes.entitlements"; sourceTree = "<group>"; };
+		C87BBD8129CDDDE10008C18E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		C87BBD8329CDDDE90008C18E /* FunfactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunfactsView.swift; sourceTree = "<group>"; };
+		C87BBD8629CDE3E10008C18E /* HeroButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroButton.swift; sourceTree = "<group>"; };
+		C87BBD8929CDEA8C0008C18E /* GameplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayView.swift; sourceTree = "<group>"; };
+		C87BBD8B29CDEA9A0008C18E /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		C87BBD8D29CDEAA50008C18E /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		C87BBD8F29CDEAAD0008C18E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C87BBD9129CDEB560008C18E /* HeroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroPage.swift; sourceTree = "<group>"; };
+		C87BBD9329CDEB790008C18E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		C87BBD9529CDF02D0008C18E /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
+		C87BBD9829CDF34D0008C18E /* LondrinaSolid-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Black.ttf"; sourceTree = "<group>"; };
+		C87BBD9929CDF34D0008C18E /* LondrinaSolid-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Thin.ttf"; sourceTree = "<group>"; };
+		C87BBD9A29CDF34D0008C18E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		C87BBD9B29CDF34D0008C18E /* LondrinaSolid-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Light.ttf"; sourceTree = "<group>"; };
+		C87BBD9C29CDF34D0008C18E /* LondrinaSolid-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondrinaSolid-Regular.ttf"; sourceTree = "<group>"; };
+		C87BBDA229CDF36A0008C18E /* Earth-Heroes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Earth-Heroes-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C87BBDA329CDF3B60008C18E /* HeroTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTitle.swift; sourceTree = "<group>"; };
+		C87BBDA629CDF53D0008C18E /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		C87BBDA729CDF53D0008C18E /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		C87BBDA829CDF53D0008C18E /* TabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		C87BBDA929CDF53D0008C18E /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
+		C87BBDAE29CDF5C80008C18E /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +95,12 @@
 		C87BBD6729CC89730008C18E /* Earth Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				C87BBDA229CDF36A0008C18E /* Earth-Heroes-Info.plist */,
+				C87BBD8529CDE3D80008C18E /* Custom */,
+				C87BBD7E29CDDC510008C18E /* Model */,
+				C87BBD7F29CDDC560008C18E /* ViewModel */,
+				C87BBD8029CDDC5B0008C18E /* View */,
+				C87BBD7629CC8A370008C18E /* Earth Heroes.entitlements */,
 				C87BBD6829CC89730008C18E /* Earth_HeroesApp.swift */,
 				C87BBD6A29CC89730008C18E /* ContentView.swift */,
 				C87BBD6C29CC89740008C18E /* Assets.xcassets */,
@@ -65,6 +115,79 @@
 				C87BBD6F29CC89740008C18E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C87BBD7E29CDDC510008C18E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBD9129CDEB560008C18E /* HeroPage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C87BBD7F29CDDC560008C18E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBD9329CDEB790008C18E /* AppViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C87BBD8029CDDC5B0008C18E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBD8829CDEA4C0008C18E /* Game */,
+				C87BBD8129CDDDE10008C18E /* GameView.swift */,
+				C87BBD8329CDDDE90008C18E /* FunfactsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C87BBD8529CDE3D80008C18E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBDA529CDF5300008C18E /* Tabbar */,
+				C87BBD9729CDF3430008C18E /* Londrina */,
+				C87BBD8629CDE3E10008C18E /* HeroButton.swift */,
+				C87BBD9529CDF02D0008C18E /* PageBar.swift */,
+				C87BBDA329CDF3B60008C18E /* HeroTitle.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		C87BBD8829CDEA4C0008C18E /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBD8929CDEA8C0008C18E /* GameplayView.swift */,
+				C87BBD8B29CDEA9A0008C18E /* ScoreboardView.swift */,
+				C87BBD8D29CDEAA50008C18E /* AchievementsView.swift */,
+				C87BBD8F29CDEAAD0008C18E /* SettingsView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		C87BBD9729CDF3430008C18E /* Londrina */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBD9829CDF34D0008C18E /* LondrinaSolid-Black.ttf */,
+				C87BBD9B29CDF34D0008C18E /* LondrinaSolid-Light.ttf */,
+				C87BBD9C29CDF34D0008C18E /* LondrinaSolid-Regular.ttf */,
+				C87BBD9929CDF34D0008C18E /* LondrinaSolid-Thin.ttf */,
+				C87BBD9A29CDF34D0008C18E /* OFL.txt */,
+			);
+			path = Londrina;
+			sourceTree = "<group>";
+		};
+		C87BBDA529CDF5300008C18E /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C87BBDAE29CDF5C80008C18E /* UIDevice.swift */,
+				C87BBDA929CDF53D0008C18E /* CustomTabBarContainerView.swift */,
+				C87BBDA629CDF53D0008C18E /* CustomTabBarView.swift */,
+				C87BBDA829CDF53D0008C18E /* TabBarItem.swift */,
+				C87BBDA729CDF53D0008C18E /* TabBarItemsPreferenceKey.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +248,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87BBDA029CDF34D0008C18E /* LondrinaSolid-Light.ttf in Resources */,
+				C87BBD9F29CDF34D0008C18E /* OFL.txt in Resources */,
+				C87BBD9E29CDF34D0008C18E /* LondrinaSolid-Thin.ttf in Resources */,
 				C87BBD7029CC89740008C18E /* Preview Assets.xcassets in Resources */,
+				C87BBD9D29CDF34D0008C18E /* LondrinaSolid-Black.ttf in Resources */,
+				C87BBDA129CDF34D0008C18E /* LondrinaSolid-Regular.ttf in Resources */,
 				C87BBD6D29CC89740008C18E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +265,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87BBD8E29CDEAA50008C18E /* AchievementsView.swift in Sources */,
+				C87BBDAF29CDF5C80008C18E /* UIDevice.swift in Sources */,
+				C87BBD8A29CDEA8C0008C18E /* GameplayView.swift in Sources */,
 				C87BBD6B29CC89730008C18E /* ContentView.swift in Sources */,
+				C87BBD9029CDEAAD0008C18E /* SettingsView.swift in Sources */,
+				C87BBD8229CDDDE10008C18E /* GameView.swift in Sources */,
+				C87BBD8429CDDDE90008C18E /* FunfactsView.swift in Sources */,
+				C87BBDAC29CDF53D0008C18E /* TabBarItem.swift in Sources */,
+				C87BBD9629CDF02D0008C18E /* PageBar.swift in Sources */,
+				C87BBDAA29CDF53D0008C18E /* CustomTabBarView.swift in Sources */,
+				C87BBD9229CDEB560008C18E /* HeroPage.swift in Sources */,
+				C87BBDAB29CDF53D0008C18E /* TabBarItemsPreferenceKey.swift in Sources */,
+				C87BBD8C29CDEA9A0008C18E /* ScoreboardView.swift in Sources */,
+				C87BBD9429CDEB790008C18E /* AppViewModel.swift in Sources */,
+				C87BBDAD29CDF53D0008C18E /* CustomTabBarContainerView.swift in Sources */,
+				C87BBDA429CDF3B60008C18E /* HeroTitle.swift in Sources */,
+				C87BBD8729CDE3E10008C18E /* HeroButton.swift in Sources */,
 				C87BBD6929CC89730008C18E /* Earth_HeroesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -264,17 +408,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Earth Heroes/Earth Heroes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Earth Heroes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7AGNJTPT6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Earth-Heroes-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Herosi Ziemi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,17 +442,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Earth Heroes/Earth Heroes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Earth Heroes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7AGNJTPT6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Earth-Heroes-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Herosi Ziemi";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

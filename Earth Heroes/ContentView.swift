@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var appVM = AppViewModel()
+    
+    @State private var tabSelection: TabBarItem = .game
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        CustomTabBarContainerView(selection: $appVM.tabSelection) {
+            GameView()
+                .tabBarItem(tab: .game, selection: $appVM.tabSelection)
+            FunfactsView()
+                .tabBarItem(tab: .funfacts, selection: $appVM.tabSelection)
         }
-        .padding()
+        .environmentObject(appVM)
     }
 }
 
