@@ -65,6 +65,18 @@ struct GameView: View {
                 .padding(.horizontal, 50)
             }
             
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        appVM.isShowingCredits = true
+                    } label: {
+                        Image(systemName: "info.circle")
+                    }
+                }
+                Spacer()
+            }
+            
             if appVM.isShowingSettings {
                 ZStack {
                     Rectangle().fill(.ultraThinMaterial.opacity(0.7))
@@ -130,6 +142,9 @@ struct GameView: View {
             }
         }
         .ignoresSafeArea()
+        .sheet(isPresented: $appVM.isShowingCredits) {
+            CreditsView()
+        }
     }
 }
 

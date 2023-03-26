@@ -193,10 +193,11 @@ struct GameplayView: View {
                                 AnswerBox(question.answerC, question: .c)
                                 AnswerBox(question.answerD, question: .d)
                             }
-                            .padding(.bottom, 100)
                         }
                     }
                     .frame(maxWidth: 550)
+                    .padding(.bottom, 100)
+
                 }
                
                 HeroButton(gameVM.isCorrect != nil ? "Next Question" : "Check Answer") {
