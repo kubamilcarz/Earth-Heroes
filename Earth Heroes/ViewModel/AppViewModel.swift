@@ -76,7 +76,7 @@ final class AppViewModel: ObservableObject {
     
     
     // tabs and pages
-    @Published var currentPage: HeroPage? = .scoreboard
+    @Published var currentPage: HeroPage? = nil
     @Published var tabSelection: TabBarItem = .game
     
     func changePage(to newPage: HeroPage?) {

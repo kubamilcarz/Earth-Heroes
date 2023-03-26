@@ -11,14 +11,15 @@ struct GameView: View {
     @EnvironmentObject var appVM: AppViewModel
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Image("background")
                 .resizable()
                 .scaledToFill()
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                 .clipped()
             
-            LinearGradient(colors: [.white.opacity(0.2), .clear], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.white.opacity(1), .clear], startPoint: .top, endPoint: .bottom)
+            
             
             ScrollView {
                 VStack(spacing: 50) {
@@ -30,6 +31,7 @@ struct GameView: View {
                             .scaledToFit()
                             .frame(width: 270)
                             .padding(.top, appVM.isPortrait ? 100 : appVM.idiom == .pad ? 100 : 30)
+                            .shadow(color: .black.opacity(0.2), radius: 0, y: 3)
                         
                         VStack(spacing: 20) {
                             HeroButton("New Game", icon: "play") {

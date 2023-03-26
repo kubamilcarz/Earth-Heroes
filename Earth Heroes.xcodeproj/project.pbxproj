@@ -40,6 +40,8 @@
 		C87BBDBD29CE14390008C18E /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBC29CE14390008C18E /* HalfCircle.swift */; };
 		C87BBDC029CE1E960008C18E /* AnswerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBF29CE1E960008C18E /* AnswerBox.swift */; };
 		C87BBDC229D05B760008C18E /* GameSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDC129D05B760008C18E /* GameSettingsCell.swift */; };
+		C87BBDC529D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDC329D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings */; };
+		C87BBDC929D05D460008C18E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDC729D05D460008C18E /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,9 @@
 		C87BBDBC29CE14390008C18E /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
 		C87BBDBF29CE1E960008C18E /* AnswerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBox.swift; sourceTree = "<group>"; };
 		C87BBDC129D05B760008C18E /* GameSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsCell.swift; sourceTree = "<group>"; };
+		C87BBDC429D05D3D0008C18E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Earth-Heroes-InfoPlist.strings"; sourceTree = "<group>"; };
+		C87BBDC629D05D460008C18E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = "pl.lproj/Earth-Heroes-InfoPlist.strings"; sourceTree = "<group>"; };
+		C87BBDC829D05D460008C18E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				C87BBDA229CDF36A0008C18E /* Earth-Heroes-Info.plist */,
+				C87BBDC729D05D460008C18E /* Localizable.strings */,
+				C87BBDC329D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings */,
 				C87BBD8529CDE3D80008C18E /* Custom */,
 				C87BBD7E29CDDC510008C18E /* Model */,
 				C87BBD7F29CDDC560008C18E /* ViewModel */,
@@ -264,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = C87BBD5C29CC89730008C18E;
 			productRefGroup = C87BBD6629CC89730008C18E /* Products */;
@@ -285,8 +293,10 @@
 				C87BBD9F29CDF34D0008C18E /* OFL.txt in Resources */,
 				C87BBD9E29CDF34D0008C18E /* LondrinaSolid-Thin.ttf in Resources */,
 				C87BBD7029CC89740008C18E /* Preview Assets.xcassets in Resources */,
+				C87BBDC929D05D460008C18E /* Localizable.strings in Resources */,
 				C87BBD9D29CDF34D0008C18E /* LondrinaSolid-Black.ttf in Resources */,
 				C87BBDA129CDF34D0008C18E /* LondrinaSolid-Regular.ttf in Resources */,
+				C87BBDC529D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings in Resources */,
 				C87BBD6D29CC89740008C18E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +337,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C87BBDC329D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C87BBDC429D05D3D0008C18E /* en */,
+				C87BBDC629D05D460008C18E /* pl */,
+			);
+			name = "Earth-Heroes-InfoPlist.strings";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C87BBDC729D05D460008C18E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C87BBDC829D05D460008C18E /* pl */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C87BBD7129CC89740008C18E /* Debug */ = {
@@ -450,7 +482,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Earth Heroes/Earth Heroes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Earth Heroes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7AGNJTPT6V;
 				ENABLE_PREVIEWS = YES;
@@ -484,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Earth Heroes/Earth Heroes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Earth Heroes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7AGNJTPT6V;
 				ENABLE_PREVIEWS = YES;
