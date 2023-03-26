@@ -92,6 +92,12 @@ struct GameView: View {
                         }
                         
                         GameSettingsCell()
+                        
+                        Button {
+                            appVM.isShowingCredits = true
+                        } label: {
+                            Text("Credits")
+                        }
                     }
                     .padding()
                     .frame(maxWidth: 550)

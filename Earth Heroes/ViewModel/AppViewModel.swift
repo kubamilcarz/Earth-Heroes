@@ -5,6 +5,7 @@
 //  Created by Kuba Milcarz on 3/24/23.
 //
 
+import AVFoundation
 import SwiftUI
 
 final class AppViewModel: ObservableObject {
@@ -22,10 +23,32 @@ final class AppViewModel: ObservableObject {
     init() {
         self.questions = loadQuestions()
         loadGames()
+        
+        playMusic()
     }
     
     deinit {
         saveGames()
+    }
+    
+    var music = AVAudioPlayer()
+    
+    func playMusic() {
+        if let musicURL = Bundle.main.url(forResource: "backgroundMusic", withExtension: "mp3") {
+            if let audioPlayer = try? AVAudioPlayer(contentsOf: musicURL) {
+                music = audioPlayer
+                music.numberOfLoops = -1
+                music.play()
+            }
+        }
+    }
+    
+    func toggleMusic() {
+        if music.isPlaying {
+            music.pause()
+        } else {
+            music.play()
+        }
     }
     
     private func loadQuestions() -> [Question] {

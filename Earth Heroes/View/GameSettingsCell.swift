@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameSettingsCell: View {
+    @EnvironmentObject var appVM: AppViewModel
     
     @AppStorage("GameCardsPerGame") var cardCountPerGame = 10
     @AppStorage("GameAutomaticallyShowFunfacts") var automaticallyShowFunfacts = true
@@ -41,6 +42,21 @@ struct GameSettingsCell: View {
                 
                 Toggle("Automatically show fun facts", isOn: $automaticallyShowFunfacts)
                     .labelsHidden()
+            }
+            
+            HStack {
+                Text("Music")
+                    .font(.custom(HeroFont.light.rawValue, size: 18))
+                
+                Spacer()
+                
+                Image(systemName: appVM.music.isPlaying ? "speaker.wave.2" : "speaker.slash")
+                    .font(.title3)
+            }
+            .onTapGesture {
+                withAnimation {
+                    appVM.toggleMusic()
+                }
             }
         }
         .padding(.vertical, 30)

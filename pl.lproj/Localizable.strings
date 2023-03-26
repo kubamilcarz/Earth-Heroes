@@ -26,6 +26,9 @@
 "Congratulations" = "Gratulacje";
 
 /* No comment provided by engineer. */
+"Credits" = "Zródła";
+
+/* No comment provided by engineer. */
 "Fun Fact" = "Ciekawostka";
 
 /* No comment provided by engineer. */
@@ -35,7 +38,16 @@
 "Game" = "Gra";
 
 /* No comment provided by engineer. */
-"How many questions?" = "Ile pytań?";
+"Graphics from Freepik.com" = "Grafiki z Freepik.com";
+
+/* No comment provided by engineer. */
+"How many questions?" = "Ile pytan?";
+
+/* No comment provided by engineer. */
+"Lead Developer" = "";
+
+/* No comment provided by engineer. */
+"Managing Director" = "";
 
 /* No comment provided by engineer. */
 "New Game" = "Nowa Gra";
@@ -48,6 +60,12 @@
 
 /* No comment provided by engineer. */
 "No games found" = "Nie znaleziono gier";
+
+/* No comment provided by engineer. */
+"Our Team" = "Nasz Zespół";
+
+/* No comment provided by engineer. */
+"Privacy Policy" = "Polityka Prywatności";
 
 /* No comment provided by engineer. */
 "Quit" = "Wyjdz";
