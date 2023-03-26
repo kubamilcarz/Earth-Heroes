@@ -24,51 +24,84 @@ struct GameView: View {
                 VStack(spacing: 50) {
                     Spacer()
                     
-                    Image("logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 220)
-                        .padding(.top, 100)
-                    
-                    VStack(spacing: 20) {
-                        HeroButton("New Game", icon: "play") {
-                            appVM.changePage(to: .game)
+                    VStack(spacing: 50) {
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 270)
+                            .padding(.top, appVM.isPortrait ? 100 : appVM.idiom == .pad ? 100 : 30)
+                        
+                        VStack(spacing: 20) {
+                            HeroButton("New Game", icon: "play") {
+                                appVM.changePage(to: .game)
+                            }
+                            
+                            HeroButton("Scoreboard", icon: "list.bullet.rectangle.portrait") {
+                                appVM.changePage(to: .scoreboard)
+                            }
                         }
                         
-                        HeroButton("Scoreboard", icon: "list.bullet.rectangle.portrait") {
-                            appVM.changePage(to: .scoreboard)
+                        VStack(spacing: 20) {
+                            HeroButton("Achievements", icon: "trophy", style: .secondary) {
+                                appVM.changePage(to: .achievements)
+                            }
+                            
+                            HeroButton("Settings", icon: "gear", style: .secondary) {
+                                withAnimation {
+                                    appVM.isShowingSettings = true
+                                }
+                            }
                         }
                     }
-                    
-                    VStack(spacing: 20) {
-                        HeroButton("Achievements", icon: "trophy", style: .secondary) {
-                            appVM.changePage(to: .achievements)
-                        }
-                        
-                        HeroButton("Settings", icon: "gear", style: .secondary) {
-                            appVM.changePage(to: .settings)
-                        }
-                    }
+                    .frame(maxWidth: 350)
                     
                     Spacer()
                     
                     Spacer()
                 }
-                .frame(maxWidth: 350)
+                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 50)
+            }
+            
+            if appVM.isShowingSettings {
+                ZStack {
+                    Rectangle().fill(.ultraThinMaterial.opacity(0.7))
+                        .onTapGesture {
+                            withAnimation {
+                                appVM.isShowingSettings = false
+                            }
+                        }
+                    
+                    VStack {
+                        PageBar("Settings") {
+                            appVM.isShowingSettings = false
+                        }
+                        
+                        GameSettingsCell()
+                    }
+                    .padding()
+                    .frame(maxWidth: 550)
+
+                    .padding(.bottom, 30)
+                    .background(.background, in: RoundedRectangle(cornerRadius: 18))
+                    .padding()
+                }
+                .transition(.scale)
             }
             
             if let page = appVM.currentPage {
                 GeometryReader { geo in
                     VStack {
-                        Spacer(minLength: 70)
+                        Spacer(minLength: appVM.idiom == .pad ? 50 : 0)
                         
-                        HStack {
-                            Spacer()
+                        HStack(spacing: 0) {
+                            Spacer(minLength: 0)
+                            
                             Group {
                                 switch page {
                                 case .game:
                                     GameplayView()
+                                        .preferredColorScheme(.light)
                                 case .scoreboard:
                                     ScoreboardView()
                                 case .achievements:
@@ -77,15 +110,15 @@ struct GameView: View {
                                     SettingsView()
                                 }
                             }
-                            .frame(width: geo.size.width - 50)
+                            .frame(width: geo.size.width - (appVM.idiom == .pad ? 50 : 0))
                             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
                             .shadow(color: .black.opacity(0.1), radius: 50)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             
-                            Spacer()
+                            Spacer(minLength: 0)
                         }
-                        
-                        Spacer(minLength: 120)
+                            
+                        Spacer(minLength: appVM.idiom == .pad ? 100 : 0)
                     }
                     .frame(height: geo.size.height)
                 }

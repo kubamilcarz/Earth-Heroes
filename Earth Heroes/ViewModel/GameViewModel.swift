@@ -13,17 +13,20 @@ class GameViewModel: ObservableObject {
     
     @Published var isShowingGameSettings = false
     @Published var isShowingGameSummary = false
+    @AppStorage("GameCardsPerGame") var cardCountPerGame = 10
+    @AppStorage("GameAutomaticallyShowFunfacts") var automaticallyShowFunfacts = true
     
     @Published var chosenAnswer = ""
     @Published var currentQuestion: Question?
 
     @Published var isCorrect: Bool?
-    @Published var roundNumber = 1
+    @Published var roundNumber = 0
     @Published var badCount = 0
     @Published var correctCount = 0
     
+    
     init() {
-        let shuffledQuestions = loadQuestions().shuffled()
+        let shuffledQuestions = Array(loadQuestions().shuffled().prefix(cardCountPerGame))
         questions = shuffledQuestions
         if !shuffledQuestions.isEmpty {
             currentQuestion = shuffledQuestions[0]
@@ -76,7 +79,14 @@ class GameViewModel: ObservableObject {
     }
     
     func getNextQuestion() {
-        resetVariables()
+        guard roundNumber <= cardCountPerGame else {
+            withAnimation {
+                isShowingGameSummary = true
+                
+                
+            }
+            return
+        }
         
         // if current question exist and if index exists
         if let lastQuestion = currentQuestion,
@@ -105,6 +115,29 @@ class GameViewModel: ObservableObject {
                 }
             }
         }
+        
+        resetVariables()
+    }
+    
+    func resetGame() {
+        
+        // save current game
+        let newGame = Game(id: UUID(), playDate: Date.now, score: Double(correctCount)/Double(cardCountPerGame))
+        
+        AppViewModel.shared.games.append(newGame)
+        AppViewModel.shared.saveGames()
+        
+        // reset
+        roundNumber = 0
+        badCount = 0
+        correctCount = 0
+        isCorrect = nil
+        chosenAnswer = ""
+        
+        questions = Array(loadQuestions().shuffled().prefix(cardCountPerGame))
+        
+        currentQuestion = questions[0]
+        isShowingGameSummary = false
     }
     
 }

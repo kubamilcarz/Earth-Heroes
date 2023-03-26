@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct Question: Identifiable, Codable, Equatable {
+    static func == (lhs: Question, rhs: Question) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id: Int
     var question: String
     var answerA: String

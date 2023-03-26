@@ -39,6 +39,7 @@
 		C87BBDBB29CE11B00008C18E /* HeroFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBA29CE11B00008C18E /* HeroFont.swift */; };
 		C87BBDBD29CE14390008C18E /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBC29CE14390008C18E /* HalfCircle.swift */; };
 		C87BBDC029CE1E960008C18E /* AnswerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBF29CE1E960008C18E /* AnswerBox.swift */; };
+		C87BBDC229D05B760008C18E /* GameSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDC129D05B760008C18E /* GameSettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		C87BBDBA29CE11B00008C18E /* HeroFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroFont.swift; sourceTree = "<group>"; };
 		C87BBDBC29CE14390008C18E /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
 		C87BBDBF29CE1E960008C18E /* AnswerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBox.swift; sourceTree = "<group>"; };
+		C87BBDC129D05B760008C18E /* GameSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				C87BBD8829CDEA4C0008C18E /* Game */,
 				C87BBD8129CDDDE10008C18E /* GameView.swift */,
 				C87BBD8329CDDDE90008C18E /* FunfactsView.swift */,
+				C87BBDC129D05B760008C18E /* GameSettingsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				C87BBDAD29CDF53D0008C18E /* CustomTabBarContainerView.swift in Sources */,
 				C87BBDA429CDF3B60008C18E /* HeroTitle.swift in Sources */,
 				C87BBD8729CDE3E10008C18E /* HeroButton.swift in Sources */,
+				C87BBDC229D05B760008C18E /* GameSettingsCell.swift in Sources */,
 				C87BBD6929CC89730008C18E /* Earth_HeroesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

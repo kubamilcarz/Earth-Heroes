@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var appVM = AppViewModel()
+    @StateObject var appVM = AppViewModel.shared
     
     @State private var tabSelection: TabBarItem = .game
     

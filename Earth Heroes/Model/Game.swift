@@ -10,7 +10,7 @@ import SwiftUI
 // Game Object
 // Used for gameplays, scoreboard, and determining achievements
 
-struct Game: Identifiable, Codable {
+struct Game: Identifiable, Codable, Equatable {
     var id: UUID
     var playDate: Date
     var score: Double

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameplayView: View {
     @EnvironmentObject var appVM: AppViewModel
+
     @StateObject var gameVM = GameViewModel()
     
     @State private var isShowingFunFactSheet = false
@@ -21,10 +22,11 @@ struct GameplayView: View {
                     
                     Rectangle().fill(.regularMaterial)
                         .shadow(color: .black.opacity(0.1), radius: 15)
-                        .frame(maxHeight: 50)
+                        .frame(maxHeight: appVM.idiom == .pad ? 50 : appVM.isPortrait ? 110 : 50)
                     
                     TopBar
                         .frame(maxHeight: 50)
+                        .padding(.top, appVM.idiom == .pad ? 0 : appVM.isPortrait ? 60 : 5)
                 }
                 
                 Spacer()
@@ -44,7 +46,7 @@ struct GameplayView: View {
                             gameVM.isShowingGameSettings = false
                         }
                         
-                        Text("Number of questions per game\n\nAutomatically move to the next question\n\nSet Langugae")
+                        GameSettingsCell()
                         
                         HStack {
                             Spacer()
@@ -76,7 +78,9 @@ struct GameplayView: View {
                         }
                     VStack {
                         PageBar("Fun Fact", isFunFact: true) {
-                            isShowingFunFactSheet = false
+                            withAnimation {
+                                isShowingFunFactSheet = false
+                            }
                         }
                         if let funfact = gameVM.currentQuestion?.funFact {
                             Text(funfact)
@@ -85,6 +89,50 @@ struct GameplayView: View {
                                 .padding(.horizontal)
                         }
                     }
+                    .frame(maxWidth: 550)
+
+                    .padding(.bottom, 30)
+                    .background(.background, in: RoundedRectangle(cornerRadius: 18))
+                    .padding()
+                }
+                .transition(.scale)
+            }
+            
+            if gameVM.isShowingGameSummary {
+                ZStack {
+                    Rectangle().fill(.ultraThinMaterial.opacity(0.7))
+                        .onTapGesture {
+                            withAnimation {
+                                gameVM.resetGame()
+                            }
+                        }
+                    
+                    VStack {
+                        PageBar("Congratulations") {
+                            withAnimation {
+                                gameVM.resetGame()
+                            }
+                        }
+                        
+                        Text("\(gameVM.correctCount)/\(gameVM.cardCountPerGame)")
+                            .foregroundColor(.accentColor)
+                            .font(.custom(HeroFont.black.rawValue, size: 54))
+                            .padding(.vertical, 30)
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Button("Quit") {
+                                withAnimation {
+                                    gameVM.resetGame()
+                                    appVM.currentPage = nil
+                                }
+                            }
+                        }
+                        .padding(.top)
+                        .padding(.horizontal, 30)
+                    }
+                    .padding()
                     .frame(maxWidth: 550)
 
                     .padding(.bottom, 30)
@@ -117,7 +165,8 @@ struct GameplayView: View {
                 .frame(width: 30, height: 30) }
             
         }
-        .padding()
+        .padding(.vertical)
+        .padding(.horizontal, appVM.idiom == .pad ? 15 : appVM.isPortrait ? 15 : 30)
     }
     
     private var ActualGame: some View {
@@ -135,7 +184,7 @@ struct GameplayView: View {
                 ScrollView {
                     VStack(spacing: 30) {
                         QuestionBox
-                            .padding(.top, 75)
+                            .padding(.top, appVM.idiom == .pad ? 75 : appVM.isPortrait ? 130 : 75)
                         
                         if let question = gameVM.currentQuestion {
                             VStack(spacing: 20) {
@@ -159,7 +208,7 @@ struct GameplayView: View {
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 withAnimation {
-                                    if !question.funFact.isEmpty {
+                                    if !question.funFact.isEmpty && gameVM.automaticallyShowFunfacts {
                                         isShowingFunFactSheet = true
                                     }
                                 }
@@ -175,6 +224,7 @@ struct GameplayView: View {
                 .disabled(gameVM.chosenAnswer.isEmpty)
                 .padding([.horizontal, .bottom])
                 .frame(maxWidth: 550)
+                .padding(.bottom, appVM.idiom == .pad ? 0 : 90)
             }
         }
     }
@@ -194,6 +244,13 @@ struct GameplayView: View {
         .padding(20)
         .frame(maxWidth: 550)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+        .onTapGesture {
+            if !(gameVM.currentQuestion?.funFact ?? "").isEmpty {
+                withAnimation {
+                    isShowingFunFactSheet = true
+                }
+            }
+        }
         .padding(.horizontal)
     }
 }

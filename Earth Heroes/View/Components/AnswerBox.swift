@@ -42,10 +42,14 @@ struct AnswerBox: View {
                     .font(.title2.bold())
                     .foregroundStyle(gameVM.chosenAnswer == title ? .primary : .secondary)
                 
-                Text(title)
-                    .font(.custom(HeroFont.light.rawValue, size: 18))
-                    .lineLimit(4)
-                    .layoutPriority(1)
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .font(.custom(HeroFont.light.rawValue, size: 18))
+                        .lineLimit(5)
+                        .truncationMode(.middle)
+                }
+                .layoutPriority(1)
+                .frame(maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

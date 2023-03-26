@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AchievementsView: View {
+    @EnvironmentObject var appVM: AppViewModel
+    
     var body: some View {
         VStack {
             PageBar("Achievements")
+                .padding(.top, appVM.idiom != .pad && appVM.isPortrait ? 50 : 0)
             
             Spacer()
         }

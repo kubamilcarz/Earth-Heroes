@@ -32,12 +32,10 @@ struct HeroButton: View {
         } label: {
             ZStack {
                 if style == .primary {
-                    LinearGradient(colors: [.accentColor.opacity(0.9), .teal, .accentColor.opacity(0.9)], startPoint: .bottomLeading, endPoint: .topTrailing)
+                    LinearGradient(colors: [.accentColor.opacity(0.7), .teal.opacity(0.7), .accentColor.opacity(0.7)], startPoint: .bottomLeading, endPoint: .topTrailing)
                 }
                 
-                if style == .secondary {
-                    Rectangle().fill(.ultraThinMaterial)
-                }
+                Rectangle().fill(.ultraThinMaterial).opacity(style == .primary ? 0.5 : 1)
                 
                 HStack(spacing: 10) {
                     if let icon {
