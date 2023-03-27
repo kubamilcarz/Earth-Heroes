@@ -34,7 +34,6 @@
 		C87BBDAF29CDF5C80008C18E /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDAE29CDF5C80008C18E /* UIDevice.swift */; };
 		C87BBDB129CE00C90008C18E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDB029CE00C90008C18E /* Game.swift */; };
 		C87BBDB329CE01400008C18E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDB229CE01400008C18E /* Question.swift */; };
-		C87BBDB729CE0F460008C18E /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDB629CE0F460008C18E /* questions.json */; };
 		C87BBDB929CE0F880008C18E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDB829CE0F880008C18E /* GameViewModel.swift */; };
 		C87BBDBB29CE11B00008C18E /* HeroFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBA29CE11B00008C18E /* HeroFont.swift */; };
 		C87BBDBD29CE14390008C18E /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDBC29CE14390008C18E /* HalfCircle.swift */; };
@@ -43,7 +42,8 @@
 		C87BBDC529D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDC329D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings */; };
 		C87BBDC929D05D460008C18E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDC729D05D460008C18E /* Localizable.strings */; };
 		C87BBDCB29D0694E0008C18E /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BBDCA29D0694E0008C18E /* CreditsView.swift */; };
-		C87BBDCD29D099170008C18E /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDCC29D099170008C18E /* backgroundMusic.mp3 */; };
+		C87BBDCF29D09BD90008C18E /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDCE29D09BD90008C18E /* backgroundMusic.mp3 */; };
+		C87BBDD129D203450008C18E /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = C87BBDD029D203450008C18E /* questions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +77,6 @@
 		C87BBDAE29CDF5C80008C18E /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		C87BBDB029CE00C90008C18E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C87BBDB229CE01400008C18E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		C87BBDB629CE0F460008C18E /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		C87BBDB829CE0F880008C18E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		C87BBDBA29CE11B00008C18E /* HeroFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroFont.swift; sourceTree = "<group>"; };
 		C87BBDBC29CE14390008C18E /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
@@ -87,7 +86,8 @@
 		C87BBDC629D05D460008C18E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = "pl.lproj/Earth-Heroes-InfoPlist.strings"; sourceTree = "<group>"; };
 		C87BBDC829D05D460008C18E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C87BBDCA29D0694E0008C18E /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
-		C87BBDCC29D099170008C18E /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		C87BBDCE29D09BD90008C18E /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		C87BBDD029D203450008C18E /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +130,9 @@
 				C87BBD7629CC8A370008C18E /* Earth Heroes.entitlements */,
 				C87BBD6829CC89730008C18E /* Earth_HeroesApp.swift */,
 				C87BBD6A29CC89730008C18E /* ContentView.swift */,
-				C87BBDB629CE0F460008C18E /* questions.json */,
 				C87BBD6C29CC89740008C18E /* Assets.xcassets */,
-				C87BBDCC29D099170008C18E /* backgroundMusic.mp3 */,
+				C87BBDD029D203450008C18E /* questions.json */,
+				C87BBDCE29D09BD90008C18E /* backgroundMusic.mp3 */,
 				C87BBD6E29CC89740008C18E /* Preview Content */,
 			);
 			path = "Earth Heroes";
@@ -294,13 +294,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87BBDCD29D099170008C18E /* backgroundMusic.mp3 in Resources */,
+				C87BBDCF29D09BD90008C18E /* backgroundMusic.mp3 in Resources */,
 				C87BBDA029CDF34D0008C18E /* LondrinaSolid-Light.ttf in Resources */,
-				C87BBDB729CE0F460008C18E /* questions.json in Resources */,
 				C87BBD9F29CDF34D0008C18E /* OFL.txt in Resources */,
 				C87BBD9E29CDF34D0008C18E /* LondrinaSolid-Thin.ttf in Resources */,
 				C87BBD7029CC89740008C18E /* Preview Assets.xcassets in Resources */,
 				C87BBDC929D05D460008C18E /* Localizable.strings in Resources */,
+				C87BBDD129D203450008C18E /* questions.json in Resources */,
 				C87BBD9D29CDF34D0008C18E /* LondrinaSolid-Black.ttf in Resources */,
 				C87BBDA129CDF34D0008C18E /* LondrinaSolid-Regular.ttf in Resources */,
 				C87BBDC529D05D3D0008C18E /* Earth-Heroes-InfoPlist.strings in Resources */,

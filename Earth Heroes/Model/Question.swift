@@ -44,59 +44,74 @@ enum CorrectAnswer: String, Codable {
 enum QuestionDifficulty: String, Codable {
     case easy, medium, hard
     
-    init(from decoder: Decoder) {
-        do {
-            let intValue = try decoder.singleValueContainer().decode(Int.self)
-            switch intValue {
-            case 1:
-                self = .easy
-            case 2:
-                self = .medium
-            case 3:
-                self = .hard
-            default:
-                self = .easy
-            }
-        } catch {
-            self = .easy
-        }
-    }
+//    init(from decoder: Decoder) {
+//        do {
+//            let intValue = try decoder.singleValueContainer().decode(Int.self)
+//            switch intValue {
+//            case 1:
+//                self = .easy
+//            case 2:
+//                self = .medium
+//            case 3:
+//                self = .hard
+//            default:
+//                self = .easy
+//            }
+//        } catch {
+//            self = .easy
+//        }
+//    }
 }
 
 enum QuestionCategory: String, Codable {
-    case electricity
-    case pollution
-    case foodWaste = "food waste"
+    case climate
     case recycling
-    case greenhouseGases = "greenhouse gases"
+    case pollution
+    case ecosystem
+    case energy
     
     var icon: String {
         switch self {
-        case .electricity: return "bolt"
-        case .pollution: return "drop"
-        case .foodWaste: return "carrot"
-        case .recycling: return "arrow.3.trianglepath"
-        case .greenhouseGases: return "carbon.dioxide.cloud"
+        case .climate:
+            return "cloud.drizzle"
+        case .recycling:
+            return "arrow.3.trianglepath"
+        case .pollution:
+            return "drop.triangle"
+        case .ecosystem:
+            return "lizard"
+        case .energy:
+            return "bolt"
         }
     }
     
     var color: Color {
         switch self {
-        case .electricity: return .yellow
-        case .pollution: return .brown
-        case .foodWaste: return .orange
-        case .recycling: return .green
-        case .greenhouseGases: return .red
+        case .climate:
+            return .blue
+        case .recycling:
+            return .green
+        case .pollution:
+            return .brown
+        case .ecosystem:
+            return .green
+        case .energy:
+            return .yellow
         }
     }
     
     var background: String {
         switch self {
-        case .electricity: return "energy"
-        case .pollution: return "pollution"
-        case .foodWaste: return "foodWaste"
-        case .recycling: return "recycling"
-        case .greenhouseGases: return "greenhouse"
+        case .climate:
+            return "climate"
+        case .recycling:
+            return "recycling"
+        case .pollution:
+            return "pollution"
+        case .ecosystem:
+            return "ecosystem"
+        case .energy:
+            return "energy"
         }
     }
 }

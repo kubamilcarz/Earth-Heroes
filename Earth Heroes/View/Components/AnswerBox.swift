@@ -37,18 +37,17 @@ struct AnswerBox: View {
                 }
             }
             
-            HStack(alignment: .firstTextBaseline, spacing: 15) {
+            HStack(alignment: .top, spacing: 15) {
                 Image(systemName: "\(questionType.rawValue.lowercased()).square")
                     .font(.title2.bold())
                     .foregroundStyle(gameVM.chosenAnswer == title ? .primary : .secondary)
                 
                 Text(title)
+                    .lineLimit(5)
                     .font(.custom(HeroFont.light.rawValue, size: 18))
-                    .truncationMode(.middle)
-                .layoutPriority(1)
-                .frame(maxHeight: .infinity)
+
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding()
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))

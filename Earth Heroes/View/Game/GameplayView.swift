@@ -189,10 +189,15 @@ struct GameplayView: View {
                         if let question = gameVM.currentQuestion {
                             VStack(spacing: 20) {
                                 AnswerBox(question.answerA, question: .a)
+                                    .frame(maxHeight: .infinity)
                                 AnswerBox(question.answerB, question: .b)
+                                    .frame(maxHeight: .infinity)
                                 AnswerBox(question.answerC, question: .c)
+                                    .frame(maxHeight: .infinity)
                                 AnswerBox(question.answerD, question: .d)
+                                    .frame(maxHeight: .infinity)
                             }
+                            .fixedSize(horizontal: false, vertical: false)
                         }
                     }
                     .frame(maxWidth: 550)
