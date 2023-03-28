@@ -47,20 +47,6 @@ struct CreditsView: View {
                         .padding(.horizontal)
                     }
                     .padding(.top)
-                    
-                    VStack(spacing: 30) {
-                        Text("Credits")
-                            .font(.custom(HeroFont.regular.rawValue, size: 26))
-                        
-                        VStack(spacing: 15) {
-                            Link("Graphics from Freepik.com", destination: URL(string: "https://www.freepik.com")!)
-                            
-                            Link("Privacy Policy", destination: URL(string: "https://www.craft.do/s/4blUzu4rimMo7p")!)
-                                
-                        }
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    }
                 }
                 .foregroundStyle(.primary)
                 .multilineTextAlignment(.center)
