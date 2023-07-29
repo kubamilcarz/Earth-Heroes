@@ -1,6 +1,6 @@
 # Earth Heroes - Empowering Children to Protect the Environment
 
-![Earth Heroes Logo](https://github.com/kubamilcarz/Earth-Heroes/blob/main/Earth%20Heroes/Assets.xcassets/AppIcon.appiconset/heroes%20logo.png)
+<img src="https://github.com/kubamilcarz/Earth-Heroes/blob/main/Earth%20Heroes/Assets.xcassets/AppIcon.appiconset/heroes%20logo.png" alt="Earth Heroes Logo" width="200" />
 
 Welcome to the Earth Heroes GitHub repository! This is the official repository for the Earth Heroes app, a fun and educational tool designed to empower children with the knowledge and skills to protect the environment. Here, you'll find information about the app's features, goals, and how to contribute to our mission of creating a more sustainable future for our planet.
 
